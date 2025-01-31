@@ -4,20 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riset_motion/app/routes/app_pages.dart';
 
-import '../controllers/login_controller.dart';
+import '../controllers/register_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+class RegisterView extends GetView<RegisterController> {
+  const RegisterView({super.key});
   @override
   Widget build(BuildContext context) {
-    bool isChecked = false;
     return Scaffold(
         appBar: AppBar(
           leading: Icon(
             Icons.chevron_left,
             size: 30,
           ),
-          title: const Text('Masuk'),
+          title: const Text('Buat Akun'),
           centerTitle: true,
         ),
         body: Padding(
@@ -25,14 +24,6 @@ class LoginView extends GetView<LoginController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Selamat datang di Aplikasi",
-                style: TextStyle(fontSize: 32),
-                softWrap: true,
-              ),
-              SizedBox(
-                height: 16,
-              ),
               Text(
                 "Email",
                 style: TextStyle(fontSize: 16),
@@ -131,22 +122,57 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(
-                width: 16,
+                height: 16,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Checkbox(value: isChecked, onChanged: (isChecked) => {}),
-                      Text("Ingat kata sandi")
-                    ],
-                  ),
-                  Text("Lupa kata sandi?")
-                ],
+              Text(
+                "Konfirmasi Kata Sandi",
+                style: TextStyle(fontSize: 16),
               ),
               SizedBox(
-                width: 16,
+                height: 8,
+              ),
+              Container(
+                width: MediaQuery.sizeOf(context).width,
+                height: 64,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 2,
+                    color: Color(0xFF6B6B6B),
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.lock_outline_rounded,
+                        size: 28,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      VerticalDivider(
+                        width: 5,
+                        indent: 12,
+                        endIndent: 12,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                              hintText: "Konfirmasi Kata Sandi",
+                              border: InputBorder.none),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 16,
               ),
               Container(
                 width: MediaQuery.sizeOf(context).width,
@@ -160,7 +186,7 @@ class LoginView extends GetView<LoginController> {
                 ),
                 child: Center(
                   child: Text(
-                    "Masuk",
+                    "Buat Akun",
                     style: TextStyle(fontSize: 16),
                   ),
                 ),
@@ -244,16 +270,16 @@ class LoginView extends GetView<LoginController> {
                   style: TextStyle(color: Colors.black, fontSize: 16),
                   children: [
                     TextSpan(
-                      text: 'Belum punya akun? ',
+                      text: 'Sudah punya akun? ',
                     ),
                     TextSpan(
-                      text: 'Buat disini',
+                      text: 'Masuk disini',
                       style: TextStyle(
                         color: Colors.blue,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          Get.toNamed(Routes.REGISTER);
+                          Get.toNamed(Routes.LOGIN);
                         },
                     ),
                   ],

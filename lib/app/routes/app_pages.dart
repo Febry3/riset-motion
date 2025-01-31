@@ -7,13 +7,15 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/register/bindings/register_binding.dart';
+import '../modules/register/views/register_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.FORGOT_PASSWORD_NEW_PASSWORD;
+  static const INITIAL = Routes.REGISTER;
 
   static final routes = [
     GetPage(
@@ -27,6 +29,7 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
+
       name: _Paths.FORGOT_PASSWORD_EMAIL,
       page: () => const ForgotPasswordEmailView(),
       binding: ForgotPasswordBinding(),
@@ -35,6 +38,12 @@ class AppPages {
       name: _Paths.FORGOT_PASSWORD_NEW_PASSWORD,
       page: () => const ForgotPasswordNewPasswordView(),
       binding: ForgotPasswordBinding(),
+      ),
+    GetPage(
+      name: _Paths.REGISTER,
+      page: () => const RegisterView(),
+      binding: RegisterBinding(),
+    ),
     ),
   ];
 }
