@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:riset_motion/app/routes/app_pages.dart';
 
 import '../controllers/forgot_password_controller.dart';
 
@@ -23,10 +24,6 @@ class _ForgotPasswordNewPasswordViewState
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            Icons.chevron_left,
-            size: 30,
-          ),
           title: const Text('Lupa Kata Sandi'),
           centerTitle: true,
         ),
@@ -185,20 +182,23 @@ class _ForgotPasswordNewPasswordViewState
               SizedBox(
                 height: 32,
               ),
-              Container(
-                width: MediaQuery.sizeOf(context).width,
-                height: 50,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 2,
-                    color: Color(0xFF6B6B6B),
+              GestureDetector(
+                onTap: () => Get.toNamed(Routes.LOGIN),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 2,
+                      color: Color(0xFF6B6B6B),
+                    ),
+                    borderRadius: BorderRadius.circular(25),
                   ),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Center(
-                  child: Text(
-                    "Ubah Kata Sandi",
-                    style: TextStyle(fontSize: 16),
+                  child: Center(
+                    child: Text(
+                      "Ubah Kata Sandi",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                 ),
               ),

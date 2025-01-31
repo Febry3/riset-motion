@@ -231,37 +231,7 @@ class RegisterView extends GetView<RegisterController> {
                 ),
               ),
               SizedBox(
-                height: 16,
-              ),
-              Container(
-                width: MediaQuery.sizeOf(context).width,
-                height: 50,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 2,
-                    color: Color(0xFF6B6B6B),
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/fb-logo.png",
-                      scale: 1.75,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "Masuk dengan Facebook",
-                      style: TextStyle(fontSize: 14),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 16,
+                height: 32,
               ),
               Center(
                   child: RichText(

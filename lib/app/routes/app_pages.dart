@@ -29,7 +29,6 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-
       name: _Paths.FORGOT_PASSWORD_EMAIL,
       page: () => const ForgotPasswordEmailView(),
       binding: ForgotPasswordBinding(),
@@ -38,12 +37,11 @@ class AppPages {
       name: _Paths.FORGOT_PASSWORD_NEW_PASSWORD,
       page: () => const ForgotPasswordNewPasswordView(),
       binding: ForgotPasswordBinding(),
-      ),
+    ),
     GetPage(
       name: _Paths.REGISTER,
       page: () => const RegisterView(),
       binding: RegisterBinding(),
-    ),
     ),
   ];
 }
