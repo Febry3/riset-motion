@@ -21,6 +21,9 @@ SizedBox sby36 = const SizedBox(
 SizedBox sby48 = const SizedBox(
   height: 48,
 );
+SizedBox sbx4 = const SizedBox(
+  width: 4,
+);
 SizedBox sbx8 = const SizedBox(
   width: 8,
 );
@@ -32,6 +35,9 @@ SizedBox sbX16 = const SizedBox(
 );
 SizedBox sbX24 = const SizedBox(
   width: 24,
+);
+SizedBox sbX32 = const SizedBox(
+  width: 32,
 );
 SizedBox sbX36 = const SizedBox(
   width: 36,

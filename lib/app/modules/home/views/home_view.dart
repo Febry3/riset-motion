@@ -31,91 +31,338 @@ class HomeView extends GetView<HomeController> {
             sby32,
             titleAndArrow("Topik hangat"),
             sby16,
-            Container(
-              width: double.infinity,
-              height: 212,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 1,
+            hotDiscussionWidget(),
+            sby32,
+            titleAndArrow("Video ngetren terbaru"),
+            sby16,
+            SizedBox(
+              height: 298,
+              child: ListView.separated(
+                separatorBuilder: (BuildContext context, int index) => SizedBox(
+                  width: 12,
                 ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Row(
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 220,
+                    width: 191,
+                    clipBehavior: Clip.hardEdge,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.grey,
+                      ),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/onboard1.png"),
+                      ),
+                    ),
+                    child: Stack(
                       children: [
-                        CircleAvatar(
-                          radius: 30,
+                        Positioned(
+                          right: 16,
+                          top: 16,
+                          child: Container(
+                            height: 34,
+                            width: 34,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: primaryColor,
+                            ),
+                            child: Icon(
+                              Iconsax.heart,
+                              size: 18,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                        sbX12,
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Positioned(
+                          bottom: 16,
+                          child: SizedBox(
+                            width: 150,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                              ),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Dari Tebu ke Bioetanol: Proses Lengkap Produksi Bahan Bakar Ramah Lingkungan",
+                                    style: h4SemiBold.copyWith(
+                                      color: Colors.white,
+                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 16,
+                                      ),
+                                      sbx4,
+                                      Text(
+                                        "Aplikasi",
+                                        style: h4Regular.copyWith(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    children: [
+                                      sbx4,
+                                      Icon(
+                                        Iconsax.clock,
+                                        size: 15,
+                                        color: Colors.white,
+                                      ),
+                                      sbx4,
+                                      Text(
+                                        "12m",
+                                        style: h5Regular.copyWith(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      sbx4,
+                                      Icon(
+                                        Icons.circle,
+                                        size: 8,
+                                        color: primaryColor,
+                                      ),
+                                      sbx4,
+                                      Icon(
+                                        Iconsax.heart,
+                                        size: 15,
+                                        color: Colors.white,
+                                      ),
+                                      sbx4,
+                                      Text(
+                                        "3.2k",
+                                        style: h5Regular.copyWith(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            sby32,
+            titleAndArrow("Sertifikasi ahli"),
+            sby16,
+            Container(
+              height: 368,
+              width: double.infinity,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.grey,
+                  )),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 180,
+                    width: double.infinity,
+                    child: Image.asset(
+                      "assets/onboard1.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Sertifikasi ISCC (International Sustainability and Carbon Certification)",
+                          style: h3SemiBold,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              "Pak Tani Tarno",
-                              style: h4SemiBold,
+                            Row(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Iconsax.global,
+                                      size: 18,
+                                    ),
+                                    sbx8,
+                                    Text(
+                                      "Internasional",
+                                      style: h5Regular,
+                                    ),
+                                  ],
+                                ),
+                                sbX16,
+                                Row(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Iconsax.calendar_2,
+                                          size: 18,
+                                        ),
+                                        sbx8,
+                                        Text(
+                                          "5 Hari",
+                                          style: h5Regular,
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
                             ),
                             Row(
                               children: [
-                                Icon(
-                                  Iconsax.user,
-                                  size: 16,
-                                ),
-                                const SizedBox(
-                                  width: 4,
-                                ),
                                 Text(
-                                  "Petani",
-                                  style: h4Regular,
-                                ),
-                                sbx8,
-                                Icon(
-                                  Icons.circle,
-                                  size: 8,
-                                  color: primaryColor,
-                                ),
-                                sbx8,
-                                Text(
-                                  "3 jam yang lalu",
-                                  style: h4Regular,
-                                ),
+                                  "Rp1.5 - 3 Juta",
+                                  style: h4Bold,
+                                )
                               ],
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    Text(
-                      "Apa Saja Tahapan Utama dalam Mengolah Tebu Menjadi Bioetanol?",
-                      style: h4SemiBold,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        buttonWidget(Icons.thumb_up_alt_rounded, 9),
-                        Row(
-                          children: [
-                            buttonWidget(Iconsax.messages_25, 9,
-                                color: primaryColor),
-                            sbx8,
-                            buttonWidget(
-                              Icons.share,
-                              9,
-                              color: primaryColor,
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width - 64,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Daftar Sekarang",
+                            style: h4Bold.copyWith(color: whiteColor),
+                          ),
+                          sbx8,
+                          Icon(
+                            Icons.arrow_upward_rounded,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container hotDiscussionWidget() {
+    return Container(
+      width: double.infinity,
+      height: 212,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.grey,
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  radius: 30,
+                ),
+                sbX12,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Pak Tani Tarno",
+                      style: h4SemiBold,
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Iconsax.user,
+                          size: 16,
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          "Petani",
+                          style: h4Regular,
+                        ),
+                        sbx8,
+                        Icon(
+                          Icons.circle,
+                          size: 8,
+                          color: primaryColor,
+                        ),
+                        sbx8,
+                        Text(
+                          "3 jam yang lalu",
+                          style: h4Regular,
+                        ),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+            Text(
+              "Apa Saja Tahapan Utama dalam Mengolah Tebu Menjadi Bioetanol?",
+              style: h4SemiBold,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                buttonWidget(Icons.thumb_up_alt_rounded, 9),
+                Row(
+                  children: [
+                    buttonWidget(Iconsax.messages_25, 9, color: primaryColor),
+                    sbx8,
+                    buttonWidget(
+                      Icons.share,
+                      9,
+                      color: primaryColor,
+                    ),
+                  ],
+                )
+              ],
             ),
           ],
         ),

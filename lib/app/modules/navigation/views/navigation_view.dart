@@ -15,57 +15,59 @@ class NavigationView extends GetView<NavigationController> {
     List<Widget> _pages = [
       HomeView(),
     ];
-    return Scaffold(
-      body: Obx(
-        () => IndexedStack(
-          index: controller.selectedIndex.value,
-          children: [_pages[controller.selectedIndex.value]],
+    return SafeArea(
+      child: Scaffold(
+        body: Obx(
+          () => IndexedStack(
+            index: controller.selectedIndex.value,
+            children: [_pages[controller.selectedIndex.value]],
+          ),
         ),
-      ),
-      bottomNavigationBar: SizedBox(
-        child: Obx(
-          () => BottomNavigationBar(
-            currentIndex: controller.selectedIndex.value,
-            onTap: (index) {
-              controller.updateIndex(index);
-            },
-            backgroundColor: Colors.white,
-            selectedItemColor: primaryColor,
-            selectedLabelStyle: h6SemiBold,
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
+        bottomNavigationBar: SizedBox(
+          child: Obx(
+            () => BottomNavigationBar(
+              currentIndex: controller.selectedIndex.value,
+              onTap: (index) {
+                controller.updateIndex(index);
+              },
+              backgroundColor: Colors.white,
+              selectedItemColor: primaryColor,
+              selectedLabelStyle: h6SemiBold,
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                    icon: Container(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Icon(Iconsax.home),
+                    ),
+                    label: 'Beranda'),
+                BottomNavigationBarItem(
+                    icon: Container(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Icon(Iconsax.book_1),
+                    ),
+                    label: 'Materi'),
+                BottomNavigationBarItem(
+                    icon: Container(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Icon(Iconsax.message),
+                    ),
+                    label: 'Forum'),
+                BottomNavigationBarItem(
+                    icon: Container(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Icon(Iconsax.video),
+                    ),
+                    label: 'Video'),
+                BottomNavigationBarItem(
                   icon: Container(
                     padding: EdgeInsets.only(top: 10),
-                    child: Icon(Iconsax.home),
+                    child: Icon(Iconsax.task_square),
                   ),
-                  label: 'Beranda'),
-              BottomNavigationBarItem(
-                  icon: Container(
-                    padding: EdgeInsets.only(top: 10),
-                    child: Icon(Iconsax.book_1),
-                  ),
-                  label: 'Materi'),
-              BottomNavigationBarItem(
-                  icon: Container(
-                    padding: EdgeInsets.only(top: 10),
-                    child: Icon(Iconsax.message),
-                  ),
-                  label: 'Forum'),
-              BottomNavigationBarItem(
-                  icon: Container(
-                    padding: EdgeInsets.only(top: 10),
-                    child: Icon(Iconsax.video),
-                  ),
-                  label: 'Video'),
-              BottomNavigationBarItem(
-                icon: Container(
-                  padding: EdgeInsets.only(top: 10),
-                  child: Icon(Iconsax.task_square),
+                  label: 'Sertifikasi',
                 ),
-                label: 'Sertifikasi',
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
