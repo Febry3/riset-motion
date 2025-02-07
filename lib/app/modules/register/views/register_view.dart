@@ -174,20 +174,23 @@ class RegisterView extends GetView<RegisterController> {
               SizedBox(
                 height: 16,
               ),
-              Container(
-                width: MediaQuery.sizeOf(context).width,
-                height: 50,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 2,
-                    color: Color(0xFF6B6B6B),
+              GestureDetector(
+                onTap: () => Get.toNamed(Routes.ONBOARDING_PAGE_1),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 2,
+                      color: Color(0xFF6B6B6B),
+                    ),
+                    borderRadius: BorderRadius.circular(25),
                   ),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Center(
-                  child: Text(
-                    "Buat Akun",
-                    style: TextStyle(fontSize: 16),
+                  child: Center(
+                    child: Text(
+                      "Buat Akun",
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                 ),
               ),
