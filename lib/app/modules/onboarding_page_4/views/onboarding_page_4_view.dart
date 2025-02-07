@@ -19,13 +19,12 @@ class OnboardingPage4View extends GetView<OnboardingPage4Controller> {
       appBar: AppBar(
         backgroundColor: whiteColor,
         actions: [
-          Row(
-            children: [
-              Text("Lewati"),
-              sbx8,
-              Icon(Icons.arrow_right_alt_rounded),
-            ],
-          )
+          Text(
+            "Lewati",
+            style: h4Regular,
+          ),
+          sbx8,
+          Icon(Icons.arrow_right_alt_rounded),
         ],
       ),
       body: SingleChildScrollView(

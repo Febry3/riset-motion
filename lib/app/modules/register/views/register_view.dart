@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:riset_motion/app/routes/app_pages.dart';
+import 'package:riset_motion/app/themes/colors.dart';
+import 'package:riset_motion/app/themes/font.dart';
 
 import '../controllers/register_controller.dart';
 
@@ -16,7 +18,10 @@ class RegisterView extends GetView<RegisterController> {
             Icons.chevron_left,
             size: 30,
           ),
-          title: const Text('Buat Akun'),
+          title: Text(
+            'Buat Akun',
+            style: h2SemiBold,
+          ),
           centerTitle: true,
         ),
         body: Padding(
@@ -25,8 +30,15 @@ class RegisterView extends GetView<RegisterController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
+                "Buat bisnis anda lebih baik",
+                style: h1Regular,
+              ),
+              SizedBox(
+                height: 32,
+              ),
+              Text(
                 "Email",
-                style: TextStyle(fontSize: 16),
+                style: h4Regular,
               ),
               SizedBox(
                 height: 8,
@@ -76,7 +88,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
               Text(
                 "Kata Sandi",
-                style: TextStyle(fontSize: 16),
+                style: h4Regular,
               ),
               SizedBox(
                 height: 8,
@@ -126,7 +138,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
               Text(
                 "Konfirmasi Kata Sandi",
-                style: TextStyle(fontSize: 16),
+                style: h4Regular,
               ),
               SizedBox(
                 height: 8,
@@ -180,16 +192,13 @@ class RegisterView extends GetView<RegisterController> {
                   width: MediaQuery.sizeOf(context).width,
                   height: 50,
                   decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: Color(0xFF6B6B6B),
-                    ),
+                    color: primaryColor,
                     borderRadius: BorderRadius.circular(25),
                   ),
                   child: Center(
                     child: Text(
                       "Buat Akun",
-                      style: TextStyle(fontSize: 16),
+                      style: h4Regular.copyWith(color: Colors.white),
                     ),
                   ),
                 ),
@@ -200,7 +209,7 @@ class RegisterView extends GetView<RegisterController> {
               Center(
                 child: Text(
                   "Atau",
-                  style: TextStyle(fontSize: 16),
+                  style: h4Regular,
                 ),
               ),
               SizedBox(
@@ -228,7 +237,7 @@ class RegisterView extends GetView<RegisterController> {
                     ),
                     Text(
                       "Masuk dengan Google",
-                      style: TextStyle(fontSize: 14),
+                      style: h4Regular,
                     )
                   ],
                 ),
@@ -240,7 +249,7 @@ class RegisterView extends GetView<RegisterController> {
                   child: RichText(
                 text: TextSpan(
                   text: '',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: h4Regular,
                   children: [
                     TextSpan(
                       text: 'Sudah punya akun? ',

@@ -20,7 +20,10 @@ class LoginView extends GetView<LoginController> {
             Icons.chevron_left,
             size: 30,
           ),
-          title: const Text('Masuk'),
+          title: Text(
+            'Masuk',
+            style: h2SemiBold,
+          ),
           centerTitle: true,
         ),
         body: Padding(
@@ -159,7 +162,7 @@ class LoginView extends GetView<LoginController> {
                   onTap: () => Get.toNamed(Routes.ONBOARDING_PAGE_1),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width,
-                    height: 38,
+                    height: 50,
                     decoration: BoxDecoration(
                       color: primaryColor,
                       borderRadius: BorderRadius.circular(50),
@@ -167,7 +170,7 @@ class LoginView extends GetView<LoginController> {
                     child: Center(
                       child: Text(
                         "Masuk",
-                        style: Title2.copyWith(color: whiteColor),
+                        style: h4Regular.copyWith(color: whiteColor),
                       ),
                     ),
                   )),
@@ -177,7 +180,7 @@ class LoginView extends GetView<LoginController> {
               Center(
                 child: Text(
                   "Atau",
-                  style: TextStyle(fontSize: 16),
+                  style: h4Regular,
                 ),
               ),
               SizedBox(
@@ -205,7 +208,7 @@ class LoginView extends GetView<LoginController> {
                     ),
                     Text(
                       "Masuk dengan Google",
-                      style: TextStyle(fontSize: 14),
+                      style: h4Regular,
                     )
                   ],
                 ),
@@ -217,7 +220,7 @@ class LoginView extends GetView<LoginController> {
                   child: RichText(
                 text: TextSpan(
                   text: '',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: h4Regular,
                   children: [
                     TextSpan(
                       text: 'Belum punya akun? ',
