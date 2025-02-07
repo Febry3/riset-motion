@@ -66,7 +66,9 @@ class OnboardingPage4View extends GetView<OnboardingPage4Controller> {
               ),
               sby16,
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(Routes.NAVIGATION);
+                },
                 child: Center(
                     child: Container(
                   width: MediaQuery.sizeOf(context).width,

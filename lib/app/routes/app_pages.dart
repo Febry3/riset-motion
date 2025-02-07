@@ -7,6 +7,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/navigation/bindings/navigation_binding.dart';
+import '../modules/navigation/views/navigation_view.dart';
 import '../modules/onboarding_page_1/bindings/onboarding_page_1_binding.dart';
 import '../modules/onboarding_page_1/views/onboarding_page_1_view.dart';
 import '../modules/onboarding_page_2/bindings/onboarding_page_2_binding.dart';
@@ -70,6 +72,11 @@ class AppPages {
       name: _Paths.ONBOARDING_PAGE_4,
       page: () => const OnboardingPage4View(),
       binding: OnboardingPage4Binding(),
+    ),
+    GetPage(
+      name: _Paths.NAVIGATION,
+      page: () => const NavigationView(),
+      binding: NavigationBinding(),
     ),
   ];
 }
