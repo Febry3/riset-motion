@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:riset_motion/app/routes/app_pages.dart';
+import 'package:riset_motion/app/themes/colors.dart';
+import 'package:riset_motion/app/themes/font.dart';
+import 'package:riset_motion/app/themes/spaces.dart';
 
 import '../controllers/login_controller.dart';
 
@@ -26,29 +29,25 @@ class LoginView extends GetView<LoginController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Selamat datang di Aplikasi",
-                style: TextStyle(fontSize: 32),
-                softWrap: true,
-              ),
-              SizedBox(
-                height: 16,
+                "Selamat datang di",
+                style: h1Regular,
               ),
               Text(
+                "Aplikasi",
+                style: h1Regular.copyWith(color: primaryColor),
+              ),
+              sby16,
+              Text(
                 "Email",
-                style: TextStyle(fontSize: 16),
+                style: h4Regular,
               ),
-              SizedBox(
-                height: 8,
-              ),
+              sby8,
               Container(
                 width: MediaQuery.sizeOf(context).width,
                 height: 64,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 2,
-                    color: Color(0xFF6B6B6B),
-                  ),
-                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xFFe6e6e6),
+                  borderRadius: BorderRadius.circular(15),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -73,6 +72,7 @@ class LoginView extends GetView<LoginController> {
                         child: TextField(
                           decoration: InputDecoration(
                               hintText: "Masukkan Email",
+                              hintStyle: h4Regular,
                               border: InputBorder.none),
                         ),
                       )
@@ -85,7 +85,7 @@ class LoginView extends GetView<LoginController> {
               ),
               Text(
                 "Kata Sandi",
-                style: TextStyle(fontSize: 16),
+                style: h4Regular,
               ),
               SizedBox(
                 height: 8,
@@ -94,11 +94,8 @@ class LoginView extends GetView<LoginController> {
                 width: MediaQuery.sizeOf(context).width,
                 height: 64,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 2,
-                    color: Color(0xFF6B6B6B),
-                  ),
-                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xFFe6e6e6),
+                  borderRadius: BorderRadius.circular(15),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -123,6 +120,7 @@ class LoginView extends GetView<LoginController> {
                         child: TextField(
                           decoration: InputDecoration(
                               hintText: "Masukkan Kata Sandi",
+                              hintStyle: h4Regular,
                               border: InputBorder.none),
                         ),
                       ),
@@ -139,38 +137,40 @@ class LoginView extends GetView<LoginController> {
                   Row(
                     children: [
                       Checkbox(value: isChecked, onChanged: (isChecked) => {}),
-                      Text("Ingat kata sandi")
+                      Text(
+                        "Ingat kata sandi",
+                        style: h4Regular,
+                      )
                     ],
                   ),
                   GestureDetector(
                       onTap: () =>
                           Get.toNamed(Routes.FORGOT_PASSWORD_NEW_PASSWORD),
-                      child: Text("Lupa kata sandi?"))
+                      child: Text(
+                        "Lupa kata sandi?",
+                        style: h4Regular,
+                      ))
                 ],
               ),
               SizedBox(
                 width: 16,
               ),
               GestureDetector(
-                onTap: () => Get.toNamed(Routes.ONBOARDING_PAGE_1),
-                child: Container(
-                  width: MediaQuery.sizeOf(context).width,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: Color(0xFF6B6B6B),
+                  onTap: () => Get.toNamed(Routes.ONBOARDING_PAGE_1),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 38,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(50),
                     ),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Masuk",
-                      style: TextStyle(fontSize: 16),
+                    child: Center(
+                      child: Text(
+                        "Masuk",
+                        style: Title2.copyWith(color: whiteColor),
+                      ),
                     ),
-                  ),
-                ),
-              ),
+                  )),
               SizedBox(
                 height: 24,
               ),
